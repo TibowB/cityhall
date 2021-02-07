@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./public/css/style.css" />
+    <title>Accueil</title>
+  </head>
+  <body>
+    <header class="header">
+      <a class="header__link" href="/">Accueil</a>
+      <h1 class="header__title">Mairies de France et Outre-Mer</h1>
+    </header>
+    <div class="cityhall">
+      <h2 class="cityhall__title"></h2>
+      <div class="cityhall__container">
+        <div class="cityhall__address"></div>
+        <a href="" class="cityhall__link" target="_blank"
+          >Voir sur GoogleMaps</a
+        >
+        <div class="cityhall__email"></div>
+        <div class="cityhall__phone"></div>
+      </div>
+      <a href="" class="cityhall__website" target="_blank"></a>
+      <button onclick="saveToFavorites()">Favoris</button>
+    </div>
+  </body>
+  <script src="./public/js/cityhall.js"></script>
+</html>

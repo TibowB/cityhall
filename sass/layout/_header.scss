@@ -1,0 +1,16 @@
+.header {
+  height: 4em;
+  background-color: $color-header;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1em;
+  @include box-shadow;
+  &__link {
+    text-decoration: none;
+    color: $color-link;
+  }
+  &__title {
+    font-size: 1.5em;
+  }
+}

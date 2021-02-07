@@ -1,0 +1,40 @@
+.favorites {
+  width: 80%;
+  margin: 1em auto;
+  min-height: 10em;
+  &__title {
+    text-align: center;
+  }
+  &__container {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.region {
+  width: 80%;
+  margin: auto;
+  &__title {
+    text-align: center;
+  }
+  &__container {
+    margin-top: 2em;
+    margin: 1em auto;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  &__card {
+    margin: 1em 1em;
+    font-size: 0.85em;
+    height: 3em;
+    width: 8em;
+    padding: 0.5em;
+    display: inherit;
+    flex-wrap: inherit;
+    justify-content: center;
+    border: 1px solid $color-card-border;
+    border-radius: 1em;
+    cursor: pointer;
+    @include box-shadow;
+  }
+}
