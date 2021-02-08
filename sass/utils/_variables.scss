@@ -1,3 +1,11 @@
 $color-header: #6fc1f0;
 $color-link: #474545;
 $color-card-border: #beabab;
+
+$header-height: 4em;
+$favorites-height: calc(100% - #{$header-height});
+$main-height: $favorites-height;
+
+$header-width: 100%;
+$favorites-width: 20%;
+$main-width: calc(#{$header-width} - #{$favorites-width});
