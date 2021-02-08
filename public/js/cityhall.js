@@ -18,7 +18,6 @@ function asyncFunction(url) {
     request.send();
     request.onload = function () {
       var cityHall = request.response;
-      console.log(cityHall["features"].length);
       populateCityHall(cityHall);
     };
   });
@@ -73,14 +72,42 @@ function populateCityHall(cityHall) {
 
   cityHallWebsiteContainer.textContent = cityHallWebsite;
   cityHallWebsiteContainer.setAttribute("href", `${cityHallWebsite}`);
+
+  // Favorites Button
+  generateFavoritesButton();
 }
 
 getCityHallFromAPI();
 
 // TODO
 // Generate favorites button based on localstorage
+function generateFavoritesButton() {
+  // Current city name
+  var cityName = document.querySelector(".cityhall__title").textContent;
+
+  // Get all cities already in favorites
+  var favorites = [];
+  for (let i = 0; i < localStorage.length; i++) {
+    favorites.push(localStorage.key(i));
+  }
+  // Button container
+  var favoritesButtonContainer = document.querySelector(".cityhall__button");
+
+  if (favorites.includes(cityName)) {
+    favoritesButtonContainer.textContent = "Retirer des favoris";
+    favoritesButtonContainer.setAttribute("onclick", "removeFromFavorites()");
+  } else {
+    favoritesButtonContainer.textContent = "Ajouter aux favoris";
+    favoritesButtonContainer.setAttribute("onclick", "saveToFavorites()");
+  }
+}
 
 // Remove item from favorites
+function removeFromFavorites() {
+  var cityName = document.querySelector(".cityhall__title").textContent;
+  localStorage.removeItem(`${cityName}`);
+  generateFavoritesButton();
+}
 
 // Add city to favorites
 
@@ -89,4 +116,5 @@ function saveToFavorites() {
   var urlParams = new URL(window.location);
   var cityCode = urlParams.searchParams.get("code");
   localStorage.setItem(`${cityName}`, `${cityCode}`);
+  generateFavoritesButton();
 }
