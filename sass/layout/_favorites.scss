@@ -1,0 +1,19 @@
+.favorites {
+  background-color: red;
+  position: absolute;
+  left: 0;
+  top: $header-height;
+  width: $favorites-width;
+  height: $favorites-height;
+  &__title {
+    margin-top: 1em;
+    text-align: center;
+  }
+  &__container {
+    display: flex;
+    flex-direction: column;
+  }
+  &__item {
+    margin: auto;
+  }
+}
