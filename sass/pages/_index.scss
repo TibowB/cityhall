@@ -1,0 +1,37 @@
+.region {
+  position: absolute;
+  top: $header-height;
+  left: $favorites-width;
+  height: $main-height;
+  width: $main-width;
+  margin: auto;
+  &__title {
+    width: 80%;
+    margin: 1em auto;
+    text-align: center;
+  }
+  &__container {
+    margin-top: 2em;
+    margin: 1em auto;
+    display: flex;
+    flex-wrap: wrap;
+    width: 70%;
+  }
+  &__card {
+    margin: 1em auto;
+    padding: auto;
+    font-size: 0.85em;
+    height: fit-content;
+    width: 8em;
+    padding: 0.5em;
+    display: inherit;
+    flex-wrap: inherit;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    border: 1px solid $color-card-border;
+    border-radius: 1em;
+    cursor: pointer;
+    @include box-shadow;
+  }
+}
