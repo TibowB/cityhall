@@ -1,3 +1,5 @@
+getCitiesFromAPI();
+
 function getCitiesFromAPI() {
   var urlParams = new URL(window.location);
   var departmentCode = urlParams.searchParams.get("code");
@@ -27,17 +29,33 @@ function populateCities(cities) {
   var cityContainer = document.querySelector(".city__container");
   for (let i = 0; i < cities.length; i++) {
     var cityDiv = document.createElement("div");
-    var cityCode = cities[i]["code"];
+    var cityCode = cities[i]["code"].toString();
+    // Check for Corsica
+    if (cityCode.startsWith("2A") || cityCode.startsWith("2B")) {
+      cityDiv.setAttribute("data-city", `${cityCode}`);
+      cityDiv.setAttribute("onclick", `goToCorsicaCityHall()`);
+    } else {
+      var cityCode = parseInt(cities[i]["code"]);
+      cityDiv.setAttribute("onclick", `goToCityHall(${cityCode})`);
+    }
 
     cityDiv.textContent = cities[i]["nom"];
-    cityDiv.setAttribute("onclick", `goToCityHall(${cityCode})`);
     cityDiv.classList.add("city__card");
     cityContainer.append(cityDiv);
   }
 }
 
-getCitiesFromAPI();
-
 function goToCityHall(code) {
+  var code = code.toString();
+  if (code.length === 4) {
+    code = "0" + code;
+  }
+  window.location.href = `/cityhall.html?code=${code}`;
+}
+
+// Special function for Corsica
+// 2A and 2B created a bug
+function goToCorsicaCityHall() {
+  var code = event.target.dataset.city;
   window.location.href = `/cityhall.html?code=${code}`;
 }

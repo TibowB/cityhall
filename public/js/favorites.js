@@ -1,8 +1,10 @@
 const favoritesContainer = document.querySelector(".favorites__container");
 const favorites = localStorage;
 
+generateFavorites(favorites);
+
 function generateFavorites(favorites) {
-  // There are no favorites
+  // No favorites
   if (favorites.length === 0) {
     var noFavoritesDiv = document.createElement("div");
     noFavoritesDiv.textContent = "Vous n'avez pas de favoris !";
@@ -20,5 +22,3 @@ function generateFavorites(favorites) {
     }
   }
 }
-
-generateFavorites(favorites);

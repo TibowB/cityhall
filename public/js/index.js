@@ -1,3 +1,5 @@
+getRegionsFromAPI();
+
 function getRegionsFromAPI() {
   var url = "https://geo.api.gouv.fr/regions?fields=nom,code";
   asyncFunction(url);
@@ -25,6 +27,7 @@ function populateRegions(regions) {
     var regionCode = regions[i]["code"];
 
     regionDiv.textContent = regions[i]["nom"];
+    regionDiv.classList.add("region__card");
     regionDiv.setAttribute("onclick", `goToDepartment(${regionCode})`);
     regionDiv.classList.add("region__card");
     regionContainer.append(regionDiv);
@@ -36,7 +39,5 @@ function goToDepartment(code) {
   if (code < 10) {
     window.location.href = `/city.html?code=${code}`;
   }
-  window.location.href = `/region.html?code=${code}`;
+  window.location.href = `/department.html?code=${code}`;
 }
-// Init
-getRegionsFromAPI();

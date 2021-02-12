@@ -3,10 +3,6 @@ getCityHallFromAPI();
 function getCityHallFromAPI() {
   var urlParams = new URL(window.location);
   var cityCode = urlParams.searchParams.get("code");
-  if (cityCode < 10) {
-    cityCode = "0" + cityCode;
-  }
-
   var url = `https://etablissements-publics.api.gouv.fr/v3/communes/${cityCode}/mairie`;
   asyncFunction(url);
 }
@@ -27,10 +23,10 @@ function asyncFunction(url) {
 }
 
 function populateCityHall(cityHall) {
+  console.log(cityHall["features"][0]["properties"]["adresses"][0]);
   // Title
   var cityHallTitleContainer = document.querySelector(".cityhall__title");
-  const cityName =
-    cityHall["features"][0]["properties"]["adresses"][0]["commune"];
+  const cityName = cityHall["features"][0]["properties"]["nom"];
 
   cityHallTitleContainer.textContent = cityName;
 
@@ -41,7 +37,7 @@ function populateCityHall(cityHall) {
   var cityHallAddressCode =
     cityHall["features"][0]["properties"]["adresses"][0]["codePostal"];
 
-  cityHallAddressContainer.textContent = `${cityHallAddress} ${cityHallAddressCode} ${cityName}`;
+  cityHallAddressContainer.textContent = `${cityHallAddress} ${cityHallAddressCode} Paris`;
 
   // Google Maps
   var cityHallGoogleMaps = document.querySelector(".cityhall__link");
@@ -79,6 +75,8 @@ function populateCityHall(cityHall) {
   // Favorites Button
   generateFavoritesButton();
 }
+
+getCityHallFromAPI();
 
 // Generate favorites button based on localstorage
 function generateFavoritesButton() {
