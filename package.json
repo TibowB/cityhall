@@ -4,6 +4,7 @@
   "description": "Address list of cityhalls in France",
   "main": "index.js",
   "scripts": {
+    "start": "parcel index.html",
     "sass": "sass --watch ./sass/main.scss:./public/css/style.css --style compressed",
     "prefix": "postcss ./public/css/style.css --use autoprefixer -d ./public/css/prefixed/"
   },
