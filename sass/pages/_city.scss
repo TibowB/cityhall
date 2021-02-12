@@ -1,0 +1,41 @@
+.city {
+  position: absolute;
+  top: $header-height;
+  left: $favorites-width;
+  height: $main-height;
+  width: $main-width;
+  margin: auto;
+  overflow-y: scroll;
+  &__title {
+    margin-top: 1em;
+    text-align: center;
+  }
+  &__navigation {
+    margin-top: 1em;
+    display: flex;
+    justify-content: center;
+  }
+  &__container {
+    margin-top: 2em;
+    margin: 1em auto;
+    display: flex;
+    flex-wrap: wrap;
+    width: 80%;
+  }
+  &__card {
+    margin: 1em auto;
+    font-size: 0.85em;
+    height: fit-content;
+    width: 8em;
+    padding: 0.5em;
+    display: inherit;
+    flex-wrap: inherit;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    border: 1px solid $color-card-border;
+    border-radius: 1em;
+    cursor: pointer;
+    @include box-shadow;
+  }
+}

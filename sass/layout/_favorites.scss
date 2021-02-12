@@ -1,12 +1,15 @@
 .favorites {
-  background-color: red;
+  background: $color-favorites-bg;
   position: absolute;
   left: 0;
   top: $header-height;
   width: $favorites-width;
   height: $favorites-height;
+  overflow-y: scroll;
+  box-shadow: 0 0 3em 0 rgba(0, 0, 0, 0.4);
   &__title {
-    margin-top: 1em;
+    color: $color-text-white;
+    margin: 1em 0;
     text-align: center;
   }
   &__container {
@@ -14,6 +17,13 @@
     flex-direction: column;
   }
   &__item {
-    margin: auto;
+    margin: 0.5em auto;
+    color: $color-text-white;
+    text-decoration: none;
+  }
+  &__none {
+    color: $color-text-white;
+    text-align: center;
+    font-size: 0.8rem;
   }
 }
