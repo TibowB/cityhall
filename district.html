@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./public/css/style.css" />
-    <title>Villes</title>
+    <title>Arrondissement</title>
   </head>
   <body>
     <header class="header">
@@ -15,9 +15,9 @@
       <h2 class="favorites__title">Mes favoris</h2>
       <div class="favorites__container"></div>
     </div>
-    <div class="city">
-      <h2 class="city__title">Choisissez une ville</h2>
-      <div class="city__navigation">
+    <div class="cityhall">
+      <h2 class="cityhall__title"></h2>
+      <div class="cityhall__navigation">
         <svg
           onclick="goBack()"
           xmlns="http://www.w3.org/2000/svg"
@@ -29,29 +29,24 @@
           <path d="M0 0h24v24H0z" fill="none" />
           <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z" />
         </svg>
-        <svg
-          onclick="goForward()"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 24 24"
-          fill="black"
-          width="36px"
-          height="36px"
-        >
-          <path d="M0 0h24v24H0z" fill="none" />
-          <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" />
-        </svg>
       </div>
-      <div class="city__container"></div>
+      <div class="cityhall__container">
+        <div class="cityhall__address"></div>
+        <a href="" class="cityhall__link" target="_blank"
+          >Voir sur GoogleMaps</a
+        >
+        <div class="cityhall__email"></div>
+        <div class="cityhall__phone"></div>
+        <a href="" class="cityhall__website" target="_blank"></a>
+        <button class="cityhall__button"></button>
+      </div>
     </div>
   </body>
-  <script src="./public/js/city.js"></script>
+  <script src="./public/js/district.js"></script>
   <script src="./public/js/favorites.js"></script>
   <script>
     function goBack() {
       window.history.back();
-    }
-    function goForward() {
-      window.history.forward();
     }
   </script>
 </html>

@@ -4,15 +4,32 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./public/css/style.css" />
-    <title>Accueil</title>
+    <title>Mairie</title>
   </head>
   <body>
     <header class="header">
       <a class="header__link" href="/">Accueil</a>
       <h1 class="header__title">Mairies de France et Outre-Mer</h1>
     </header>
+    <div class="favorites">
+      <h2 class="favorites__title">Mes favoris</h2>
+      <div class="favorites__container"></div>
+    </div>
     <div class="cityhall">
       <h2 class="cityhall__title"></h2>
+      <div class="cityhall__navigation">
+        <svg
+          onclick="goBack()"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="black"
+          width="36px"
+          height="36px"
+        >
+          <path d="M0 0h24v24H0z" fill="none" />
+          <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z" />
+        </svg>
+      </div>
       <div class="cityhall__container">
         <div class="cityhall__address"></div>
         <a href="" class="cityhall__link" target="_blank"
@@ -20,10 +37,16 @@
         >
         <div class="cityhall__email"></div>
         <div class="cityhall__phone"></div>
+        <a href="" class="cityhall__website" target="_blank"></a>
+        <button class="cityhall__button"></button>
       </div>
-      <a href="" class="cityhall__website" target="_blank"></a>
-      <button class="cityhall__button"></button>
     </div>
   </body>
   <script src="./public/js/cityhall.js"></script>
+  <script src="./public/js/favorites.js"></script>
+  <script>
+    function goBack() {
+      window.history.back();
+    }
+  </script>
 </html>
