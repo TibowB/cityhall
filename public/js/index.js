@@ -36,8 +36,7 @@ function populateRegions(regions) {
 
 function goToDepartment(code) {
   // Redirect to city.html for DOM/TOM
-  if (code < 10) {
-    window.location.href = `/city.html?code=${code}`;
-  }
-  window.location.href = `/department.html?code=${code}`;
+  code < 10
+    ? (window.location.href = `/city.html?code=${code}`)
+    : (window.location.href = `/department.html?code=${code}`);
 }
