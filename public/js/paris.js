@@ -30,12 +30,19 @@ function populateDistricts(districts) {
   for (let i = 0; i < districts.length; i++) {
     var districtDiv = document.createElement("div");
     var districtCode = districts[i];
-
-    districtDiv.textContent = districtCode;
-    districtDiv.setAttribute("onclick", `goToCityHall(${districtCode})`);
-    districtDiv.classList.add("district__card");
-    districtContainer.append(districtDiv);
+    implementDistrictElement(districtDiv, districtContainer, districtCode);
   }
+}
+
+function implementDistrictElement(
+  districtDiv,
+  districtContainer,
+  districtCode
+) {
+  districtDiv.textContent = districtCode;
+  districtDiv.setAttribute("onclick", `goToCityHall(${districtCode})`);
+  districtDiv.classList.add("district__card");
+  districtContainer.append(districtDiv);
 }
 
 function goToCityHall(code) {
