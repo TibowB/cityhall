@@ -25,17 +25,26 @@ function populateRegions(regions) {
   for (let i = 0; i < regions.length; i++) {
     var regionDiv = document.createElement("div");
     var regionCode = regions[i]["code"];
-
-    regionDiv.textContent = regions[i]["nom"];
-    regionDiv.classList.add("region__card");
-    regionDiv.setAttribute("onclick", `goToDepartment(${regionCode})`);
-    regionDiv.classList.add("region__card");
-    regionContainer.append(regionDiv);
+    implementRegionElement(regionDiv, regionContainer, regionCode, regions, i);
   }
 }
 
+function implementRegionElement(
+  regionDiv,
+  regionContainer,
+  regionCode,
+  regions,
+  index
+) {
+  regionDiv.textContent = regions[index]["nom"];
+  regionDiv.classList.add("region__card");
+  regionDiv.setAttribute("onclick", `goToDepartment(${regionCode})`);
+  regionDiv.classList.add("region__card");
+  regionContainer.append(regionDiv);
+}
+
+// Redirect to city.html for DOM/TOM
 function goToDepartment(code) {
-  // Redirect to city.html for DOM/TOM
   code < 10
     ? (window.location.href = `/city.html?code=${code}`)
     : (window.location.href = `/department.html?code=${code}`);
