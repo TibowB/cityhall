@@ -18,5 +18,10 @@
   "bugs": {
     "url": "https://github.com/TibowB/cityhall/issues"
   },
-  "homepage": "https://github.com/TibowB/cityhall#readme"
+  "homepage": "https://github.com/TibowB/cityhall#readme",
+  "devDependencies": {
+    "parcel": "^2.0.1",
+    "postcss": "^8.4.5",
+    "sass": "^1.45.2"
+  }
 }
