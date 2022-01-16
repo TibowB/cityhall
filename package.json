@@ -4,7 +4,7 @@
   "description": "Address list of cityhalls in France",
   "scripts": {
     "dev": "parcel index.html",
-    "build": "parcel build index.html",
+    "build": "parcel build --public-url . index.html",
     "sass": "sass --watch ./sass/main.scss:./public/css/style.css --style compressed",
     "prefix": "postcss ./public/css/style.css --use autoprefixer -d ./public/css/prefixed/"
   },
