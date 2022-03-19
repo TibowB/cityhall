@@ -6,6 +6,8 @@ For each cityhall, you can get its address, location via Google Maps, phone numb
 
 I used the [API Géo](https://api.gouv.fr/documentation/api-geo) to get all the cities and then the [API Annuaire des établissements publics de l'administration](https://api.gouv.fr/documentation/api_etablissements_publics) for the informations of each cityhall.
 
+Click [here](https://cityhall.bruggeman.dev/) for the live version.
+
 
 ## How to use this project
 
