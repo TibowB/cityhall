@@ -1,7 +1,36 @@
-# cityhall
+# Cityhall
 
-Addresses list of cityhalls in France
+List every cityhall of France.
 
-This app provide informations (address,google maps,e-mail,phone,url) about every cityhalls in France.
+For each cityhall, you can get its address, location via Google Maps, phone number, e-mail and website.
 
 I used the [API Géo](https://api.gouv.fr/documentation/api-geo) to get all the cities and then the [API Annuaire des établissements publics de l'administration](https://api.gouv.fr/documentation/api_etablissements_publics) for the informations of each cityhall.
+
+
+## How to use this project
+
+**Clone the repository**
+
+```bash
+git clone https://github.com/TibowB/cityhall.git
+```
+
+**Go inside the repository**
+
+```bash
+cd cityhall
+```
+
+**Install packages**
+
+```bash
+npm install
+```
+
+**Start the app**
+
+```bash
+npm run dev
+```
+
+The application should be available on http://localhost:1234 (if this port isn't already in use on your computer).
