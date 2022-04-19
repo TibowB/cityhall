@@ -23,7 +23,7 @@ git clone https://github.com/TibowB/cityhall.git
 cd cityhall
 ```
 
-**Install packages**
+**Install depedencies**
 
 ```bash
 npm install
