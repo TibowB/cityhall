@@ -1,14 +1,11 @@
+import { createRouter, createWebHashHistory, RouteRecordRaw } from "vue-router";
+import Regions from "../views/Regions.vue";
 
-import { createRouter, createWebHashHistory, RouteRecordRaw } from 'vue-router'
-import Home from '../views/Home.vue'
-
-const routes: RouteRecordRaw[] = [
-    { path: '', component: Home}
-]
+const routes: RouteRecordRaw[] = [{ path: "", component: Regions }];
 
 const router = createRouter({
-    history: createWebHashHistory(),
-    routes
-})
+  history: createWebHashHistory(),
+  routes,
+});
 
 export default router;
