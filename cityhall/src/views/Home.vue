@@ -1,20 +1,23 @@
 <script lang="ts">
-import { defineComponent } from "vue";
-import Card from "../components/Card.vue";
-import Title from "../components/Title.vue";
-import fetchDataFromApi from "../services/client";
-import { Region } from "../types/region";
-import { useStore } from "../stores/store";
+import { defineComponent } from 'vue';
+import Card from '../components/Card.vue';
+import Title from '../components/Title.vue';
+import { Region } from '../types/region';
+import { useStore } from '../stores/store';
+import { getRegions } from '../services/geo';
+import { useRouter } from 'vue-router';
 
 export default defineComponent({
+  name: 'Home',
   components: {
     Card,
     Title,
   },
   setup() {
     const store = useStore();
+    const router = useRouter();
 
-    return { store };
+    return { store, router };
   },
   data() {
     return {
@@ -23,7 +26,7 @@ export default defineComponent({
   },
   mounted() {
     if (this.store.regions.length === 0) {
-      fetchDataFromApi().then((response) => {
+      getRegions().then((response) => {
         this.regions = response;
         this.store.$patch({
           regions: response,
@@ -34,8 +37,8 @@ export default defineComponent({
     }
   },
   methods: {
-    onClick(code: string): void {
-      console.log(this.store.regions);
+    onClickGoToRegion(code: string): void {
+      this.router.push({ name: 'Region', params: { code: code } });
     },
   },
 });
@@ -44,11 +47,12 @@ export default defineComponent({
 <template>
   <div class="home">
     <Title title="Choisissez une région" />
+    >
     <Card
       :label="region.nom"
       v-for="region of regions"
       :key="region.code"
-      @click="onClick(region.code)"
+      @click="onClickGoToRegion(region.code)"
     />
   </div>
 </template>
